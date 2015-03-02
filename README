@@ -1,0 +1,70 @@
+Text ChatRoullette README
+
+This project is consist of a chat server and a chat client that enables a client to chat with “random” people and supports multiple such sessions. 
+
+
+Commands are listed below. PS, things in "" are the information need for command. e.g. throwout "2" means the admin wants to throw out a client with clientID 2. Related information about each client such as clientID, client's nickname can be get by calling "stats" function.
+**************************************************************************************
+SERVERS(issued by admin):
+stats
+List all the client in the client_list, including their sockfd, nickname, clientID, how many times this client is flagged. Also count how many client are in the client_list and the number of clients that are currently chatting.
+
+throwout "clientID"
+Throwout a client with clientID from a channel, and destroy the channel they were using.
+
+block "clientID"
+Prevent the client with clientID from talking to others and end the current channel he/she is in.
+
+unblock "clientID"
+Allows the client with clientID to be randomly picked for future chatting.
+
+start
+Starts the server and allows clients to accept chatting.
+
+end
+Destroy all active channel, clear the chat queue and free all resources. And inform every client that the chat session is over.
+**************************************************************************************
+
+
+
+**************************************************************************************
+CLIENT:
+connect "nickname"
+The client express the intent to be part of the chat queue. And the client can specify his/her nickname.
+
+chat
+Ask the Text ChatRoulette Server (TRS) to assign a partner for this client.
+
+quit
+End the current chatting this client is in.
+
+transfer "file repository"
+Send a file to it's partner.
+
+flag
+Tells the TRS that his partner is misbehaving in some form.
+
+help
+Ask TRS to list all the commands the client call call.
+
+broadcast "message"
+The client can send the message to all the other client in client_list.
+
+whisp "message"
+The client will be sending the message his/her partner.
+****************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

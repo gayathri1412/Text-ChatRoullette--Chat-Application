@@ -1,0 +1,16 @@
+connect "nickname"
+The client express the intent to be part of the chat queue. And the client can specify his/her nickname.
+chat
+Ask the Text ChatRoulette Server (TRS) to assign a partner for this client.
+quit
+End the current chatting this client is in.
+transfer "file repository"
+Send a file to it's partner.
+flag
+Tells the TRS that his partner is misbehaving in some form.
+help
+Ask TRS to list all the commands the client call call.
+broadcast "message"
+The client can send the message to all the other client in client_list.
+whisp "message"
+The client will be sending the message his/her partner.
